@@ -46,7 +46,7 @@ function wcmpRenderAdminNoticeHtml($message, $buttons = [], $type = 'error', $in
     );
     if ($includeScript) {
         $noticesL10n = array(
-            'accountInfoUrl' => admin_url('/wc-api/pagarme-account-info')
+            'accountInfoUrl' => site_url('/wc-api/pagarme-account-info')
         );
         wp_enqueue_script(
             'pagarme-notice-js',
