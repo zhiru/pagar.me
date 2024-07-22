@@ -571,20 +571,22 @@ abstract class AbstractGateway extends WC_Payment_Gateway
     }
 
     protected function isEnabled()
-    {
-        global $wp;
-        $enabled = $this->get_option('enabled', 'no');
+	{
+		global $wp;
+		$enabled = $this->get_option('enabled', 'no');
 
-        if (!isset($wp->query_vars['order-pay'])) {
-            return $enabled;
-        }
+		if (!isset($wp->query_vars['order-pay'])) {
+			return $enabled;
+		}
 
-        $orderId = $wp->query_vars['order-pay'];
-        $order = wc_get_order($orderId);
-        if (empty($order->get_customer_id())) {
-            $enabled = 'no';
-        }
+		$orderId = $wp->query_vars['order-pay'];
+		$order = wc_get_order($orderId);
 
-        return $enabled;
-    }
+		// Ajuste para permitir visitantes
+		/*if (empty($order->get_customer_id()) && 'yes' !== get_option('woocommerce_enable_guest_checkout')) {
+			$enabled = 'no';
+		}*/
+
+		return $enabled;
+	}
 }
