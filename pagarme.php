@@ -1,11 +1,11 @@
 <?php
 /*
- * Plugin Name: Pagar.me for WooCommerce
- * Version:     3.3.2
- * Author:      Pagar.me
- * Author URI:  https://pagar.me
+ * Plugin Name: Aireset - Pagar.me para WooCommerce
+ * Version:     1.0.0
+ * Author:      Felipe Almeman - Aireset
+ * Author URI:  https://aireset.com.br
  * License:     GPL2
- * Description: Enable Pagar.me Gateway for WooCommerce
+ * Description: Ativa o Gateway da Pagar.me para WooCommerce (Versão da Aireset)
  * Requires at least: 4.1
  * Tested up to: 6.5.5
  * WC requires at least: 3.9.0
@@ -17,7 +17,6 @@
 
 use Woocommerce\Pagarme\Model\Config;
 use Woocommerce\Pagarme\Model\FeatureCompatibilization;
-
 
 const BRAZILIAN_MARKET_URL = 'https://wordpress.org/plugins/woocommerce-extra-checkout-fields-for-brazil/';
 const PAGARME_REQUIREMENTS_URL = 'https://docs.pagar.me/docs/requisitos-de-instala%C3%A7%C3%A3o-woocommerce';
